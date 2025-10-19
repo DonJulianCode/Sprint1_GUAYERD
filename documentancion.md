@@ -34,26 +34,47 @@ Datos transaccionales (nivel micro), que pueden agregarse por mes, cliente o pro
 - Python 3.10+
 - Librerías: `pandas`, `tabulate`
 
-Instalación:
-```bash
 pip install pandas tabulate
 
-leer rutas de archivos
-unir todos en dataframe maestro
-mientras True:
-    mostrar menú
-    si opción == 1:
-        agrupar por mes y sumar montos
-    si opción == 2:
-        agrupar por cliente y sumar montos
-    si opción == 3:
-        agrupar por producto y sumar montos
-    si opción == 4:
-        agrupar por producto y sumar cantidades
-    si opción == 5:
-        contar operaciones por medio de pago
-    si opción == 6:
-        mostrar resumen general
-    si opción == 7:
-        salir del programa
+# 🧮 Pseudocódigo
 
+leer rutas de archivos  
+unir todos en dataframe maestro  
+mientras True:  
+ mostrar menú  
+ si opción == 1:  
+  agrupar por mes y sumar montos  
+ si opción == 2:  
+  agrupar por cliente y sumar montos  
+ si opción == 3:  
+  agrupar por producto y sumar montos  
+ si opción == 4:  
+  agrupar por producto y sumar cantidades  
+ si opción == 5:  
+  contar operaciones por medio de pago  
+ si opción == 6:  
+  mostrar resumen general  
+ si opción == 7:  
+  salir del programa  
+
+## 💡 Sugerencias y mejoras aplicadas con IA
+
+- Optimizar la estructura del menú  
+- Agregar formato visual con `tabulate`  
+- Incorporar control de errores y validación  
+- Simplificar la lectura de múltiples archivos  
+
+## 📌 Resultado esperado
+
+Un script interactivo que consolida datos dispersos de ventas y entrega una visión rápida, visual y útil del comportamiento comercial general.
+
+---
+
+# 🧾 Instrucciones de uso del programa
+
+## 🔧 Requisitos previos
+
+1. Instalar dependencias:
+
+```bash
+pip install pandas tabulate
