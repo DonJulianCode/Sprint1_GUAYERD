@@ -1,64 +1,82 @@
-# 💬 Prompts utilizados con GitHub Copilot
+# 🧠 Copilot Prompts Log – Excel Sales Analysis System
 
-## 🧮 Solicitud 1 – Generar pseudocódigo base del programa
-
-> 💭 **Prompt para Copilot:**
-> 
-> "Crea el pseudocódigo para un programa en Python que lea múltiples archivos Excel o CSV, los combine en un único DataFrame maestro y luego muestre un menú interactivo con las siguientes opciones:
-> 
-> 1. Agrupar por mes y sumar montos  
-> 2. Agrupar por cliente y sumar montos  
-> 3. Agrupar por producto y sumar montos  
-> 4. Agrupar por producto y sumar cantidades  
-> 5. Contar operaciones por medio de pago  
-> 6. Mostrar resumen general  
-> 7. Salir del programa  
-> 
-> Representa la lógica general sin usar código Python, solo con estructura de pseudocódigo legible y ordenado."
+This document compiles the main prompts provided to GitHub Copilot during the development of the **Excel Sales Analysis System**.  
+The goal of these prompts was to automate data merging, visualization, and report generation using Python.
 
 ---
 
-## 🤖 Solicitud 2 – Aplicar mejoras con inteligencia artificial
+## 🚀 Project Overview
 
-> 💭 **Prompt para Copilot:**
-> 
-> "Optimiza el diseño del programa anterior incorporando buenas prácticas de desarrollo.  
-> 
-> Sugiere mejoras que incluyan:
-> - Un menú más claro y modular.  
-> - Resultados formateados visualmente con la librería `tabulate`.  
-> - Validación y control de errores de entrada del usuario.  
-> - Simplificación del proceso de lectura de múltiples archivos CSV o Excel.  
-> 
-> Explica brevemente cómo cada mejora aporta claridad, robustez o legibilidad al código."
+The project aims to:
+
+- Merge multiple Excel files into a unified master dataset.  
+- Analyze sales performance by products, clients, and months.  
+- Provide a console-based interactive menu for quick exploration.  
+- Display results elegantly using the `tabulate` library.  
+- Visualize data relationships between Excel files through network diagrams.  
+
+All tasks are designed to run seamlessly in **Google Colab** or **VSCode**.
 
 ---
 
-## 📘 Solicitud 3 – Crear guía de uso en Markdown
+## 🧩 Prompts Sent to Copilot
 
-> 💭 **Prompt para Copilot:**
-> 
-> "Genera un archivo de documentación en formato Markdown (`instrucciones_copilot.md`) que contenga:
-> 
-> - Requisitos previos e instalación de dependencias (`pandas`, `tabulate`).  
-> - Instrucciones paso a paso para ejecutar el script principal `analisis_ventas.py`.  
-> - Explicación del menú de opciones.  
-> - Ejemplo visual de salida en formato tabular (`fancy_grid`).  
-> - Notas sobre personalización, unión de archivos y posibles mejoras futuras (como exportar reportes a Excel o incluir gráficos).  
-> 
-> Usa una estructura clara, con secciones y emojis para hacerlo más visual y fácil de leer."
+### 1️⃣ Merge and Menu System
+```text
+Create a Python program that:
+1. Reads several Excel files from URLs or local paths.
+2. Merges them into a master dataset.
+3. Displays a text-based menu with options like:
+   - Show best-selling products (by quantity and by total sales).
+   - Identify top customers.
+   - Analyze monthly sales.
+Use `tabulate` with "fancy_grid" style to display results nicely.
+2️⃣ Add Option for Top Products
+Add option 7 to the previous menu:
+   - Show top-selling products both by quantity and total revenue.
 
----
+3️⃣ Markdown Summary Report
+Generate a Markdown summary report with:
+   - Key metrics (sales, customers, months).
+   - Highlighted top performers.
+   - A short insight paragraph per section.
+Output should be pure Markdown, ready to copy-paste.
 
-## 📊 Resultado esperado (resumen general del conjunto de prompts)
+4️⃣ Excel Relationship Diagram
+Create a diagram that shows how the Excel files relate to each other based on shared columns.
+Each file is a node; draw connecting edges where columns overlap.
+Use `networkx` and `matplotlib` to visualize the relationships.
 
-> 💭 **Prompt para Copilot:**
-> 
-> "A partir de los tres prompts anteriores, genera un script interactivo en Python que lea múltiples archivos de ventas, los consolide en un DataFrame maestro y ofrezca un menú de análisis.  
-> 
-> El resultado debe ser un programa funcional, limpio y visualmente agradable, que permita obtener una visión rápida del comportamiento comercial general."
+5️⃣ Schema Visualization (Mock Version)
+Even without real Excel files, generate a mock relationship diagram that represents:
+   - ventas_enero.xlsx
+   - ventas_febrero.xlsx
+   - clientes.xlsx
+   - productos.xlsx
+Assume shared keys like `id_producto` and `id_cliente`.
+Label nodes and edges to simulate the schema visually.
 
----
+6️⃣ Unified Aesthetic Output
+Ensure all charts, tables, and menus are clean and formatted.
+Keep everything within one Python script for easy execution in Colab or VSCode.
 
-¿Quieres que te prepare también una versión complementaria para **Copilot Chat** (formato inline en VS Code, como si estuvieras trabajando línea por línea dentro del código)?  
-Puedo convertir estos mismos prompts al estilo “comentario en código” (`# Copilot, genera...`) para integrarlos directamente dentro de tu script `analisis_ventas.py`.
+🧮 Tools and Libraries
+
+pandas → Excel reading and merging
+tabulate → Table formatting
+networkx + matplotlib → Graph-based relationship diagrams
+os → File handling
+collections / itertools → Data aggregation
+
+💡 Outcome
+
+The resulting system provides:
+
+An elegant, menu-driven interface for exploring sales data.
+Automatically generated Markdown summaries for reporting.
+Visual diagrams that clarify relationships among Excel sources.
+A portable, well-documented Python script ready for real datasets.
+
+Author: Julián Gómez Brizuela
+Project: Sales Analysis Tools
+Year: 2025
